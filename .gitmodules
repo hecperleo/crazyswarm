@@ -25,3 +25,4 @@
 [submodule "ros_ws/src/crazyflie_ros"]
 	path = ros_ws/src/crazyflie_ros
 	url = https://github.com/hecperleo/crazyflie_ros.git
+	branch = grvc-ual
