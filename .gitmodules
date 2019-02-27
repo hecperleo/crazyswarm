@@ -24,4 +24,4 @@
 	url = https://github.com/USC-ACTLab/libmotioncapture.git
 [submodule "ros_ws/src/crazyflie_ros"]
 	path = ros_ws/src/crazyflie_ros
-	url = https://github.com/whoenig/crazyflie_ros.git
+	url = https://github.com/hecperleo/crazyflie_ros.git
