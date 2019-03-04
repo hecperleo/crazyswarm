@@ -5,9 +5,9 @@
   <rosparam command="load" file="$(find crazyswarm)/launch/crazyflieTypes.yaml" />
   <rosparam command="load" file="$(find crazyswarm)/launch/crazyflies.yaml" />
 
-  <node pkg="crazyswarm" type="crazyswarm_server" name="crazyswarm_server" output="screen" >
+  <node pkg="crazyswarm" type="crazyswarm_server" name="crazyswarm_server" output="screen">
     <rosparam>
-      firmware: "crazyswarm" # one of "crazyswarm", "bitcraze"
+      firmware: "bitcraze" # one of "crazyswarm", "bitcraze"
       broadcast_address: "FFE7E7E7E7"
       world_frame: "/world"
       genericLogTopics: ["log1"]
@@ -22,7 +22,7 @@
         commander:
           enHighLevel: 1
         stabilizer:
-          estimator: 3 # 1: complementary, 2: kalman, 3: kalmanUSC (only crazyswarm firmware)
+          estimator: 2 # 1: complementary, 2: kalman, 3: kalmanUSC (only crazyswarm firmware)
           controller: 2 # 1: PID, 2: mellinger
         ring:
           effect: 16 # 6: double spinner, 7: solid color, 16: packetRate
@@ -38,7 +38,7 @@
         #  gyro_var_z: 0.2e-2 # 0.2e-4
         #  acc_var_xyz: 2.4e-3 # 2.4e-3
       # tracking
-      motion_capture_type: "vicon" # one of none,vicon,optitrack,qualisys,vrpn
+      motion_capture_type: "none" # one of none,vicon,optitrack,qualisys,vrpn
       object_tracking_type: "libobjecttracker" # one of motionCapture,libobjecttracker
       vicon_host_name: "vicon"
       # optitrack_local_ip: "localhost"
@@ -66,7 +66,7 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyswarm)/launch/test.rviz"/>
 
-  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_x" args="/cf2/log1/values[0]"/> -->
-  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_roll" args="/cf1/log1/values[2] /cf1/log1/values[3]"/> -->
+  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_x" args="/cf3/log1/values[0]"/> -->
+  <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_roll" args="/cf3/log1/values[2] /cf3/log1/values[3]"/> -->
 
 </launch>
